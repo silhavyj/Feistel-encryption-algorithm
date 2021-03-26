@@ -26,7 +26,7 @@ Usage:
 The program takes two required parameters - the input file and the key file. The content of the input file will go through the process of encryption as well as decryption within one run of the program. The second compulsory parameter, the key file, is a file containing keys to be used within the algorithm.
 
 #### input file
-There's no requirement as to what the structure of the input file should be. It could be any file, including binary files, such as images, documents, etc. If the input happens to be a binary file, the user needs to specify it using the `-b` option so the program can treat it accordingly. By default, the program assumes the input file is a text file.
+There's no requirement as to what the structure of the input file should be. It could be any file, including binary files, such as images, documents, etc. If the input file happens to be a binary file, the user will need to specify it using the `-b` option so the program can treat it accordingly. By default, the program assumes the input file is a text file.
 ```
 ./feistel dwarf_small.bmp keys.txt -b
 ```
@@ -37,7 +37,7 @@ k0=0101
 k1=0111
 k2=0000
 ```
-Each line represents a key to be used in one iteration through the Feistel network. Therefore, the number of keys determines the number of iteration to be carried out in total. Since 8 bits are considered to be one block of data, the key itself must be a number (in a binary format) less than 16.
+Each line represents a key to be used in one iteration through the Feistel network. Therefore, the number of keys determines the number of iterations to be carried out in total. Since 8 bits are considered to be one block of data, the key itself must be a number (in a binary format) less than 16.
 ```
  LEFT      RIGHT
 -----------------
@@ -84,4 +84,4 @@ Once this is done, we apply the following algorithm in order to encrypt this blo
 This function was given beforehand as `f(Ri-1, Ki) = (Ri-1 xor Ki) and ¬Ki`.
 
 ### decryption
-As far as the decryption process is concerned, all we need to do is to use the same algorithm with the keys in the reversed order. So instead of using `key[i]`, we will use `key[n-i-1]`.
+As far as the decryption process is concerned, all we need to do is to use the same algorithm with the keys in the reversed order. So instead of using `key[i]`, we will use `key[n-i-1]`, where `n` is the total number of keys.
