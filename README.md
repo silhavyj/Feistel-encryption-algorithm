@@ -77,4 +77,4 @@ LHS = 0x05 (0101)
 RHS = 0x06 (0110)
 ```
 Once this is done, we apply the following algorithm in order to encrypt this block of data.
-![Screenshot](doc/algorithm.pdf)
+![Screenshot](doc/algorithm.svg)
