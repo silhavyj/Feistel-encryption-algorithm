@@ -84,4 +84,4 @@ Once this is done, we apply the following algorithm in order to encrypt this blo
 This function was given beforehand as `f(Ri-1, Ki) = (Ri-1 xor Ki) and ¬Ki`.
 
 ### decryption
-As far as the decryption process is concerned, all we need to do is to use the same algorithm with the keys in the opposite order. So instead of using `key[i]`, we will use `key[n-i-1]`.
+As far as the decryption process is concerned, all we need to do is to use the same algorithm with the keys in the reversed order. So instead of using `key[i]`, we will use `key[n-i-1]`.
