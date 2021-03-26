@@ -55,6 +55,8 @@ int loadKeys(std::string fileName) {
             return 3;
         keys.push_back(num);
     }
+    if (keys.empty())
+        return 4;
     DEBUG("OK\n");
     return 0;
 }
@@ -185,6 +187,9 @@ int main(int argc, char **argv) {
         std::cout << "key file has invalid content ('=' not found)!\n";
     else if (res == 3)
         std::cout << "key file contains a number greater than 15!\n";
+    else if (res == 4)
+        std::cout << "there must be at least one key in the key file!\n";
+
     if (res != 0)
         return 1;
 
